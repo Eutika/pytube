@@ -20,8 +20,16 @@ from typing import Any, Callable, Dict, List, Optional, Tuple
 from pytube.exceptions import ExtractError, RegexMatchError
 from pytube.helpers import cache, regex_search
 from pytube.parser import find_object_from_startpoint, throttling_array_split
+from pytube.innertube import _default_clients
 
 logger = logging.getLogger(__name__)
+
+_default_clients["ANDROID"]["context"]["client"]["clientVersion"] = "19.08.35"
+_default_clients["IOS"]["context"]["client"]["clientVersion"] = "19.08.35"
+_default_clients["ANDROID_EMBED"]["context"]["client"]["clientVersion"] = "19.08.35"
+_default_clients["IOS_EMBED"]["context"]["client"]["clientVersion"] = "19.08.35"
+_default_clients["IOS_MUSIC"]["context"]["client"]["clientVersion"] = "6.41"
+_default_clients["ANDROID_MUSIC"] = _default_clients["ANDROID_CREATOR"]
 
 
 class Cipher:
